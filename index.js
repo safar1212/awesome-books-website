@@ -1,13 +1,6 @@
-let books = [
-  {
-    title: "Grow and think rich",
-    author: "John",
-  },
-  {    
-    title: "The persue to happiness",
-    author: "Chris Gardener",
-  },
-];
+let books = localStorage.getItem("books")
+  ? JSON.parse(localStorage.getItem("books"))
+  : [];
 
 let booksContainer = document.getElementById("books-container");
 const addBookForm = document.getElementById("add-book");
@@ -35,13 +28,17 @@ addBookForm.addEventListener("submit", (event) => {
   };
   books.push(newBook);
 
-  reload();
+  localStorage.setItem("books", JSON.stringify(books));
 
+  reload();
 });
 
 const removeBook = (bookIndex) => {
-  console.log(bookIndex);
-  books.splice(bookIndex, 1);
-  console.log(books);
+  books = books.filter((item, index) => {
+    if (index !== bookIndex) {
+      return item;
+    }
+  });
+  localStorage.setItem("books", JSON.stringify(books));
   reload();
-}
+};
