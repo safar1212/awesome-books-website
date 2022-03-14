@@ -1,9 +1,9 @@
-const books = [
+let books = [
   {
     title: "Grow and think rich",
     author: "John",
   },
-  {
+  {    
     title: "The persue to happiness",
     author: "Chris Gardener",
   },
@@ -16,10 +16,10 @@ const author = document.getElementById("author");
 
 const reload = () => {
   booksContainer.innerHTML = books
-    .map((bookItem) => {
+    .map((bookItem, index) => {
       return `<p>${bookItem.title}</p>
       <p>${bookItem.author}.</p>
-      <button>Remove</button>
+      <button onclick="removeBook(${index})">Remove</button>
       <hr>`;
     })
     .join("");
@@ -38,3 +38,10 @@ addBookForm.addEventListener("submit", (event) => {
   reload();
 
 });
+
+const removeBook = (bookIndex) => {
+  console.log(bookIndex);
+  books.splice(bookIndex, 1);
+  console.log(books);
+  reload();
+}
