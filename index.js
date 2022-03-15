@@ -1,8 +1,10 @@
 class Books {
   constructor() {
-    this.books = localStorage.getItem("books")
-    ? JSON.parse(localStorage.getItem("books"))
-    : [];
+    if(localStorage.getItem('books') === null) {
+      this.books = [];
+    } else {
+      this.books = JSON.parse(localStorage.getItem('books'));
+    }
   }
 
   addBook(book) {
@@ -18,6 +20,7 @@ class Books {
       }
       return undefined;
     });
+
     localStorage.setItem("books", JSON.stringify(this.books));
   }
 }
@@ -42,8 +45,6 @@ const reload = () => {
 
 reload();
 
-console.log(allBooks.books);
-
 addBookForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const newBook = {
@@ -51,7 +52,8 @@ addBookForm.addEventListener("submit", (event) => {
     author: author.value,
   };
   allBooks.addBook(newBook);
-
+  title.value = '';
+  author.value = '';
   reload();
 });
 /* eslint-disable no-unused-vars */
