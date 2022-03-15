@@ -32,7 +32,7 @@ const addBookForm = document.getElementById("add-book");
 const title = document.getElementById("title");
 const author = document.getElementById("author");
 
-const reload = () => {
+function reload() {
   booksContainer.innerHTML = allBooks.books
     .map(
       (bookItem, index) => `<p>${bookItem.title}</p>
