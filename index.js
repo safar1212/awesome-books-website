@@ -1,20 +1,46 @@
-let books = localStorage.getItem('books')
-  ? JSON.parse(localStorage.getItem('books'))
-  : [];
+class Books {
+  constructor() {
+    if (localStorage.getItem('books') === null) {
+      this.books = [];
+    } else {
+      this.books = JSON.parse(localStorage.getItem('books'));
+    }
+  }
+
+  addBook(book) {
+    this.books.push(book);
+
+    localStorage.setItem('books', JSON.stringify(this.books));
+  }
+
+  removeBook(bookIndex) {
+    this.books = this.books.filter((item, index) => {
+      if (index !== bookIndex) {
+        return item;
+      }
+      return undefined;
+    });
+
+    localStorage.setItem('books', JSON.stringify(this.books));
+  }
+}
+
+const allBooks = new Books();
 
 const booksContainer = document.getElementById('books-container');
 const addBookForm = document.getElementById('add-book');
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 
-const reload = () => {
-  booksContainer.innerHTML = books
-    .map((bookItem, index) => `<p>${bookItem.title}</p>
-      <p>${bookItem.author}.</p>
+function reload() {
+  booksContainer.innerHTML = allBooks.books
+    .map(
+      (bookItem, index) => `<div class="book-item"><p><strong>"${bookItem.title}" by ${bookItem.author}.</strong></p>
       <button onclick="removeBook(${index})">Remove</button>
-      <hr>`)
+      </div>`,
+    )
     .join('');
-};
+}
 
 reload();
 
@@ -24,21 +50,14 @@ addBookForm.addEventListener('submit', (event) => {
     title: title.value,
     author: author.value,
   };
-  books.push(newBook);
-
-  localStorage.setItem('books', JSON.stringify(books));
-
+  allBooks.addBook(newBook);
+  title.value = '';
+  author.value = '';
   reload();
 });
 /* eslint-disable no-unused-vars */
 const removeBook = (bookIndex) => {
-  books = books.filter((item, index) => {
-    if (index !== bookIndex) {
-      return item;
-    }
-    return undefined;
-  });
-  localStorage.setItem('books', JSON.stringify(books));
+  allBooks.removeBook(bookIndex);
   reload();
 };
 /* eslint-disable no-unused-vars */

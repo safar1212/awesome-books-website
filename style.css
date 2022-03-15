@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+}
+
+.book-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin: 0 auto;
+}
+
+.book-item:nth-child(odd) {
+  background-color: #dcdcdc;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+#books-container {
+  align-self: stretch;
+  border: 3px black solid;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+hr {
+  background-color: black;
+  width: 15%;
+  height: 2px;
+}
+
+form button {
+  float: right;
+  background-color: white;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+.book-item button {
+  background-color: white;
+  border-right: 5px solid black;
+  border-bottom: 5px solid black;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+form input {
+  border: 2px solid black;
+}
