@@ -57,3 +57,11 @@ form button {
 form input {
   border: 2px solid black;
 }
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
