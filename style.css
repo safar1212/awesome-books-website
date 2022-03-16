@@ -25,9 +25,12 @@
 
 #books-container {
   align-self: stretch;
-  border: 3px black solid;
   margin-left: 5%;
   margin-right: 5%;
+}
+
+.has-border {
+  border: 3px black solid;
 }
 
 hr {
