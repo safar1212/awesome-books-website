@@ -2,6 +2,22 @@
   margin: 0;
 }
 
+header {
+  border: 1px solid red;
+  width: 100%;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+}
+
 .book-item {
   display: flex;
   align-items: center;

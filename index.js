@@ -74,6 +74,8 @@ const removeBook = (bookIndex) => {
 
 const sections = document.querySelectorAll('.section');
 
+console.log(sections);
+
 function makeActive(className) {
   sections.forEach((item) => {
     if(item.classList.contains(className)) {
