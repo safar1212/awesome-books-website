@@ -75,26 +75,24 @@ const list = document.getElementById('list-menu');
 const addNew = document.getElementById('add-new-menu');
 const contact = document.getElementById('contact-menu');
 
-const listSection = document.querySelector('.books-list');
-const addBookSection = document.querySelector('.add-book');
-const contactSection = document.querySelector('.contact');
+const sections = document.querySelectorAll('.section');
 
 list.addEventListener('click', () => {
-  listSection.classList.add('active');
-  addBookSection.classList.remove('active');  
-  contactSection.classList.remove('active');  
+  sections.forEach((item) => {
+    item.classList.contains('books-list') ? item.classList.add('active') : item.classList.remove('active');    
+  });
 });
 
 addNew.addEventListener('click', () => {
-  listSection.classList.remove('active');
-  addBookSection.classList.add('active');  
-  contactSection.classList.remove('active');  
+  sections.forEach((item) => {
+    item.classList.contains('add-book') ? item.classList.add('active') : item.classList.remove('active');    
+  });
 });
 
 contact.addEventListener('click', () => {
-  listSection.classList.remove('active');
-  addBookSection.classList.remove('active');  
-  contactSection.classList.add('active');  
+  sections.forEach((item) => {
+    item.classList.contains('contact') ? item.classList.add('active') : item.classList.remove('active');    
+  });
 });
 
 
