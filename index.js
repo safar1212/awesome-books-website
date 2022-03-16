@@ -1,16 +1,16 @@
 class Books {
   constructor() {
-    if (localStorage.getItem("books") === null) {
+    if (localStorage.getItem('books') === null) {
       this.books = [];
     } else {
-      this.books = JSON.parse(localStorage.getItem("books"));
+      this.books = JSON.parse(localStorage.getItem('books'));
     }
   }
 
   addBook(book) {
     this.books.push(book);
 
-    localStorage.setItem("books", JSON.stringify(this.books));
+    localStorage.setItem('books', JSON.stringify(this.books));
   }
 
   removeBook(bookIndex) {
@@ -21,15 +21,14 @@ class Books {
       return undefined;
     });
 
-    localStorage.setItem("books", JSON.stringify(this.books));
-
+    localStorage.setItem('books', JSON.stringify(this.books));
   }
 }
 
-const booksContainer = document.getElementById("books-container");
-const addBookForm = document.getElementById("add-book");
-const title = document.getElementById("title");
-const author = document.getElementById("author");
+const booksContainer = document.getElementById('books-container');
+const addBookForm = document.getElementById('add-book');
+const title = document.getElementById('title');
+const author = document.getElementById('author');
 
 const allBooks = new Books();
 
@@ -38,30 +37,30 @@ function reload() {
     .map(
       (
         bookItem,
-        index
+        index,
       ) => `<div class="book-item"><p><strong>"${bookItem.title}" by ${bookItem.author}.</strong></p>
       <button onclick="removeBook(${index})">Remove</button>
-      </div>`
+      </div>`,
     )
-    .join("");
-  if(allBooks.books.length === 0) {
-    booksContainer.style.cssText = "border: none;";
+    .join('');
+  if (allBooks.books.length === 0) {
+    booksContainer.style.cssText = 'border: none;';
   } else {
-    booksContainer.style.cssText = "border: 3px black solid;";
+    booksContainer.style.cssText = 'border: 3px black solid;';
   }
 }
 
 reload();
 
-addBookForm.addEventListener("submit", (event) => {
+addBookForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const newBook = {
     title: title.value,
     author: author.value,
   };
   allBooks.addBook(newBook);
-  title.value = "";
-  author.value = "";
+  title.value = '';
+  author.value = '';
   reload();
 });
 /* eslint-disable no-unused-vars */
@@ -77,17 +76,14 @@ const removeBook = (bookIndex) => {
 // let toDay = new Date();
 // dateTime.innerHTML = toDay.getDate() + toDay.getMonth() + toDay.getDay() + '';
 
-
 const sections = document.querySelectorAll('.section');
 
 function makeActive(className) {
   sections.forEach((item) => {
-    if(item.classList.contains(className)) {
+    if (item.classList.contains(className)) {
       item.classList.add('active');
     } else {
       item.classList.remove('active');
     }
   });
 }
-
-

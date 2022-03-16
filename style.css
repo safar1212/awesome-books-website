@@ -4,10 +4,10 @@
 
 header {
   border: 3px solid black;
+
   /* width: 96%; */
   padding: 10px 20px;
   align-self: stretch;
-
 }
 
 h2 {
@@ -22,6 +22,7 @@ header nav {
 nav ul {
   list-style: none;
   display: flex;
+
   /* gap: 28px; */
   align-items: center;
   font-weight: 600;
@@ -90,7 +91,7 @@ hr {
 }
 
 .add-book h2 {
- align-self: center;
+  align-self: center;
 }
 
 form {
