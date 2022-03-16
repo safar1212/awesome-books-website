@@ -71,10 +71,10 @@ const removeBook = (bookIndex) => {
 };
 /* eslint-disable no-unused-vars */
 
+// Adding Navigation using JS
+
 
 const sections = document.querySelectorAll('.section');
-
-console.log(sections);
 
 function makeActive(className) {
   sections.forEach((item) => {

@@ -3,8 +3,11 @@
 }
 
 header {
-  border: 1px solid red;
-  width: 100%;
+  border: 3px solid black;
+  /* width: 96%; */
+  padding: 10px 20px;
+  align-self: stretch;
+
 }
 
 header nav {
@@ -15,7 +18,27 @@ header nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 5px;
+  /* gap: 28px; */
+  align-items: center;
+  font-weight: 600;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+nav ul li {
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+nav ul li:nth-child(even) {
+  border-right: 2px black solid;
+  border-left: 2px black solid;
 }
 
 .book-item {
@@ -33,10 +56,21 @@ nav ul {
 
 .main {
   display: flex;
+  max-width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 15px;
+  padding: 10px;
+}
+
+.books-list {
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 #books-container {
@@ -79,5 +113,5 @@ form input {
 }
 
 .section.active {
-  display: block;
+  display: flex;
 }
