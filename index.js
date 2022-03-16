@@ -73,6 +73,10 @@ const removeBook = (bookIndex) => {
 
 // Adding Navigation using JS
 
+// const dateTime = document.querySelector('.date');
+// let toDay = new Date();
+// dateTime.innerHTML = toDay.getDate() + toDay.getMonth() + toDay.getDay() + '';
+
 
 const sections = document.querySelectorAll('.section');
 
