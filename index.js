@@ -71,28 +71,17 @@ const removeBook = (bookIndex) => {
 };
 /* eslint-disable no-unused-vars */
 
-const list = document.getElementById('list-menu');
-const addNew = document.getElementById('add-new-menu');
-const contact = document.getElementById('contact-menu');
 
 const sections = document.querySelectorAll('.section');
 
-list.addEventListener('click', () => {
+function makeActive(className) {
   sections.forEach((item) => {
-    item.classList.contains('books-list') ? item.classList.add('active') : item.classList.remove('active');    
+    if(item.classList.contains(className)) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
   });
-});
-
-addNew.addEventListener('click', () => {
-  sections.forEach((item) => {
-    item.classList.contains('add-book') ? item.classList.add('active') : item.classList.remove('active');    
-  });
-});
-
-contact.addEventListener('click', () => {
-  sections.forEach((item) => {
-    item.classList.contains('contact') ? item.classList.add('active') : item.classList.remove('active');    
-  });
-});
+}
 
 
