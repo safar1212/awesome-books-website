@@ -46,7 +46,6 @@ Give a ⭐️ if you like this project!
 
 - Once you start getting stuck. Know that you are at the right path
 
-
 ## 📝 License
 
-This project is lincensed work from Safar Ali and Wuletaw Wonte.
+This project is **[MIT](./LICENSE.md)** licensed.
