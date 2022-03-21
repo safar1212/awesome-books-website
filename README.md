@@ -2,6 +2,7 @@
 
 > This is a a website for books.
 
+![awesome-books-homepage](https://user-images.githubusercontent.com/12524453/158761801-f1d0a6d4-8e9a-4565-b3e0-4db7bbd009bc.png)
 
 ## Built With
 
@@ -10,22 +11,10 @@
 
 ## Getting Started
 
-### Create a desktop and mobile version website
-
-### Create a beautiful header
-
-### Create a stunning headline
-
-### Create a work section
-
-### Create an about us page
-
-### Create a footer
 
 ## Live Preview
 
 <!-- -This site was built using [GitHub Pages](https://safar1212.github.io/Portfolio/). -->
-
 
 
 ## Authors
@@ -57,7 +46,6 @@ Give a ⭐️ if you like this project!
 
 - Once you start getting stuck. Know that you are at the right path
 
-
 ## 📝 License
 
-This project is lincensed work from Safar Ali and Wuletaw Wonte.
+This project is **[MIT](./LICENSE.md)** licensed.
