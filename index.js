@@ -72,18 +72,10 @@ const removeBook = (bookIndex) => {
 
 // Adding Navigation using JS
 
-// const dateTime = document.querySelector('.date');
-// let toDay = new Date();
-// dateTime.innerHTML = toDay.getDate() + toDay.getMonth() + toDay.getDay() + '';
-
 const sections = document.querySelectorAll('.section');
 
 function makeActive(className) {
-  sections.forEach((item) => {
-    if (item.classList.contains(className)) {
-      item.classList.add('active');
-    } else {
-      item.classList.remove('active');
-    }
-  });
+  sections.forEach(item => item.classList.contains(className) ? item.classList.add('active') : item.classList.remove('active'));
 }
+
+document.querySelector('.date').innerHTML = Date();
