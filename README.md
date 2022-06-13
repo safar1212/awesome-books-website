@@ -1,6 +1,6 @@
 # awesome-books-website
 
-> This is a a website for books. This app stores favorite book of people, which they save for later.In this app folks can add book's name along with the author.
+> This is a a website for storing books along with their author names. This app stores favorite book of people, which they save for later. Moreover, In this app folks can add book's name along with the author. And Can change their list accordingly.
 
 ![awesome-books-homepage](https://user-images.githubusercontent.com/12524453/158761801-f1d0a6d4-8e9a-4565-b3e0-4db7bbd009bc.png)
 
